@@ -78,12 +78,10 @@ body {
 
 .fa{
   font-size: 36px;
-  /* color: #AEB8AC; */
   color: rgba(174, 184, 172, 0.65);
 }
 
 .fa:hover{
   font-size: 36px;
-  /* color: #fff; */
   color: rgba(255, 255, 255, 0.65);
 }
