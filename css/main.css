@@ -31,7 +31,7 @@ body {
 }
 
 .header {
-  background-image: url('../images/canyonlands_3072x1920_30q.jpg');
+  background-image: url('../images/canyonlands_3072x1920_30q_alt.jpg');
   background-size: cover;
   background-position: center;
   position: relative;
@@ -78,5 +78,12 @@ body {
 
 .fa{
   font-size: 36px;
-  color: #AEB8AC;
+  /* color: #AEB8AC; */
+  color: rgba(174, 184, 172, 0.65);
+}
+
+.fa:hover{
+  font-size: 36px;
+  /* color: #fff; */
+  color: rgba(255, 255, 255, 0.65);
 }
