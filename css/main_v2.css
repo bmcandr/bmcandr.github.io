@@ -1,0 +1,266 @@
+/* default font */
+* {
+  font-family: 'Barlow', sans-serif;
+}
+/*                       */
+/*--- navigation bar
+/*                       */
+
+.navbar {
+  background: #fff;
+}
+.nav-link,
+.navbar-brand {
+  color: #284222;
+  cursor: pointer;
+  font-weight: 300;
+  /* font-style: italic; */
+}
+.nav-link {
+  margin-right: 1em !important;
+}
+.nav-link:hover {
+  color: #798975;
+  /* font-weight: 500; */
+}
+.navbar-collapse {
+  justify-content: flex-end;
+}
+
+/*----------------------------------------------------------------------------------*/
+/*  Header
+/*-----------------------------------------------------------------------------------*/
+
+#header {
+  background: url("../images/canyonlands_3072x1920_30q_alt.jpg") repeat scroll center center / cover;
+  height: 100vh;
+  width: 100%;
+}
+
+#overlay {
+  /* position: absolute;
+  min-height: 100%;
+  min-width: 100%;
+  left: 0;
+  top: 0; */
+  height: 100vh;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.description {
+  left: 50%;
+  position: absolute;
+  top: 45%;
+  transform: translate(-50%, -55%);
+  text-align: center;
+}
+
+.description h1 {
+  font-size: 3rem;
+  font-weight: 200;
+  color: white;
+}
+
+.description p {
+  font-family: Barlow;
+  font-size: 1.25rem;
+  font-weight: 100;
+  font-style: italic;
+  line-height: 1.5;
+  color: white;
+}
+
+.description button {
+  border:1px solid #5E7159;
+  background:#284222;
+  border-radius: 5;
+  color:#fff;
+}
+
+.description button:hover {
+  border:1px solid #284222;
+  background:#fff;
+  color:#284222;
+}
+
+/* Github and LinkedIn links */
+#header .pro-icons {
+  width: 100%
+}
+
+#header .pro-icons ul {
+  display: inline-block;
+  float: none;
+  /* margin: 0 0 0px 0; */
+}
+
+#header .pro-icons ul li {
+  float: left;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+#header .pro-icons ul li a {
+  font-size: 3rem;
+  color: rgba(147, 164, 144, 0.65);
+
+  -moz-transition: all 0.5s ease-in-out 0s;
+  -ms-transition: all 0.5s ease-in-out 0s;
+  -o-transition: all 0.5s ease-in-out 0s;
+  -webkit-transition: all 0.5s ease-in-out 0s;
+  transition: all 0.5s ease-in-out 0s;
+}
+
+#header .pro-icons ul li a:hover {
+  color: rgba(255, 255, 255, 0.65);
+
+  -moz-transition: all 0.5s ease-in-out 0s;
+  -ms-transition: all 0.5s ease-in-out 0s;
+  -o-transition: all 0.5s ease-in-out 0s;
+  -webkit-transition: all 0.5s ease-in-out 0s;
+  transition: all 0.5s ease-in-out 0s;
+}
+
+/*-----------------------------------------------------------------------------------*/
+/*  Aout-us
+/*-----------------------------------------------------------------------------------*/
+
+#about {
+  width: 100%;
+  height: auto;
+  background: #f7f7f7;
+  padding-top: 190px;
+}
+
+#about .div-img-bg {
+  padding-bottom: 30px;
+  border: 20px solid #b8a07e;
+}
+
+#about .div-img-bg .about-img img {
+  width: 100%;
+  box-shadow: 0px 0px 85px 0px rgba(0, 0, 0, 0.14);
+  margin-top: -60px;
+  margin-left: 40px;
+  height: 400px;
+  object-fit: cover;
+}
+
+#about .about-descr .p-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  text-align: left;
+}
+
+#about .about-descr .separator {
+  max-width: 80%;
+  margin-bottom: 0;
+  text-align: left;
+}
+
+/*-----------------------------------------------------------------------------------*/
+/*  Footer
+/*-----------------------------------------------------------------------------------*/
+
+#footer {
+  background: #E4E8E3;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+#footer .socials-media {
+  width: 100%;
+}
+
+#footer .socials-media ul {
+  display: inline-block;
+  float: none;
+  margin: 0 0 20px 0;
+}
+
+#footer .socials-media ul li {
+  float: left;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#footer .socials-media ul li a {
+  font-size: 24px;
+  color: #C9D1C7;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  background: transparent;
+  text-transform: uppercase;
+  -moz-transition: all 0.5s ease-in-out 0s;
+  -ms-transition: all 0.5s ease-in-out 0s;
+  -o-transition: all 0.5s ease-in-out 0s;
+  -webkit-transition: all 0.5s ease-in-out 0s;
+  transition: all 0.5s ease-in-out 0s;
+}
+
+#footer .socials-media ul li a:hover {
+  color: #93A490;
+  -moz-transition: all 0.5s ease-in-out 0s;
+  -ms-transition: all 0.5s ease-in-out 0s;
+  -o-transition: all 0.5s ease-in-out 0s;
+  -webkit-transition: all 0.5s ease-in-out 0s;
+  transition: all 0.5s ease-in-out 0s;
+}
+
+#footer p {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  margin-top: 0;
+  text-transform: uppercase;
+}
+
+.copyright{
+  font-size: 0.3rem;
+}
+
+.credits {
+  font-size: 0.25rem;
+}
+
+
+/* If the screen size is 800px wide or less, reduce font-size */
+@media screen and (max-width: 800px) {
+
+  .description h1 {
+    font-size: 2em;
+  }
+
+  .description p {
+    font-size: 1rem;
+  }
+
+  .footer, .copyright{
+    font-size:0.3rem;
+  }
+
+  .pro-icons{
+    font-size:2.5rem;
+  }
+}
+
+/* If the screen size is 375px wide or less, reduce font-size */
+@media screen and (max-width: 375px) {
+
+  .description h1 {
+    font-size: 1.4rem;
+  }
+
+  .description p {
+    font-size: 0.56rem;
+  }
+
+  .footer, .copyright{
+    font-size:0.3rem;
+  }
+
+  .pro-icons{
+    font-size:2rem;
+  }
+}
