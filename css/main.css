@@ -2,17 +2,10 @@
 * {
   font-family: 'Barlow', sans-serif;
 }
+/*                       */
+/*--- navigation bar
+/*                       */
 
-body {
-  padding: 0;
-  margin: 0;
-  background-image: url('../images/canyonlands_3072x1920_30q_alt.jpg');
-  background-size: cover;
-  background-position: center;
-  position: relative;
-}
-
-/*--- navigation bar ---*/
 .navbar {
   background: #fff;
 }
@@ -34,12 +27,24 @@ body {
   justify-content: flex-end;
 }
 
-.overlay {
-  position: absolute;
+/*----------------------------------------------------------------------------------*/
+/*  Header
+/*-----------------------------------------------------------------------------------*/
+
+#header {
+  background: url("../images/canyonlands_3072x1920_30q_alt.jpg") repeat scroll center center / cover;
+  height: 100vh;
+  width: 100%;
+}
+
+#overlay {
+  /* position: absolute;
   min-height: 100%;
   min-width: 100%;
   left: 0;
-  top: 0;
+  top: 0; */
+  height: 100vh;
+  width: 100%;
   background: rgba(0, 0, 0, 0.6);
 }
 
@@ -79,31 +84,144 @@ body {
   color:#284222;
 }
 
-/* footer  */
-.footer{
-  font-family: Barlow;
-  font-size: 0.75rem;
-  font-weight: 100;
-  font-style: italic;
-  text-align: center;
-  position: absolute;
-  bottom: 0%;
-  width:100%;
-  background: rgba(0, 0, 0, 0.2);
-}
-
-.footer-text{
-  color: rgba(188, 196, 174, 0.45);
-}
-
 /* Github and LinkedIn links */
-.fa{
-  font-size: 3rem;
-  color: rgba(188, 196, 174, 0.65);
+#header .pro-icons {
+  width: 100%
 }
 
-.fa:hover{
+#header .pro-icons ul {
+  display: inline-block;
+  float: none;
+  /* margin: 0 0 0px 0; */
+}
+
+#header .pro-icons ul li {
+  float: left;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+#header .pro-icons ul li a {
+  font-size: 3rem;
+  color: rgba(147, 164, 144, 0.65);
+
+  -moz-transition: all 0.5s ease-in-out 0s;
+  -ms-transition: all 0.5s ease-in-out 0s;
+  -o-transition: all 0.5s ease-in-out 0s;
+  -webkit-transition: all 0.5s ease-in-out 0s;
+  transition: all 0.5s ease-in-out 0s;
+}
+
+#header .pro-icons ul li a:hover {
   color: rgba(255, 255, 255, 0.65);
+
+  -moz-transition: all 0.5s ease-in-out 0s;
+  -ms-transition: all 0.5s ease-in-out 0s;
+  -o-transition: all 0.5s ease-in-out 0s;
+  -webkit-transition: all 0.5s ease-in-out 0s;
+  transition: all 0.5s ease-in-out 0s;
+}
+
+/*-----------------------------------------------------------------------------------*/
+/*  Aout-us
+/*-----------------------------------------------------------------------------------*/
+
+#about {
+  width: 100%;
+  height: auto;
+  background: #f7f7f7;
+  padding-top: 190px;
+}
+
+#about .div-img-bg {
+  padding-bottom: 30px;
+  border: 20px solid #b8a07e;
+}
+
+#about .div-img-bg .about-img img {
+  width: 100%;
+  box-shadow: 0px 0px 85px 0px rgba(0, 0, 0, 0.14);
+  margin-top: -60px;
+  margin-left: 40px;
+  height: 400px;
+  object-fit: cover;
+}
+
+#about .about-descr .p-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  text-align: left;
+}
+
+#about .about-descr .separator {
+  max-width: 80%;
+  margin-bottom: 0;
+  text-align: left;
+}
+
+/*-----------------------------------------------------------------------------------*/
+/*  Footer
+/*-----------------------------------------------------------------------------------*/
+
+#footer {
+  background: #E4E8E3;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+#footer .socials-media {
+  width: 100%;
+}
+
+#footer .socials-media ul {
+  display: inline-block;
+  float: none;
+  margin: 0 0 20px 0;
+}
+
+#footer .socials-media ul li {
+  float: left;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#footer .socials-media ul li a {
+  font-size: 24px;
+  color: #C9D1C7;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  background: transparent;
+  text-transform: uppercase;
+  -moz-transition: all 0.5s ease-in-out 0s;
+  -ms-transition: all 0.5s ease-in-out 0s;
+  -o-transition: all 0.5s ease-in-out 0s;
+  -webkit-transition: all 0.5s ease-in-out 0s;
+  transition: all 0.5s ease-in-out 0s;
+}
+
+#footer .socials-media ul li a:hover {
+  color: #93A490;
+  -moz-transition: all 0.5s ease-in-out 0s;
+  -ms-transition: all 0.5s ease-in-out 0s;
+  -o-transition: all 0.5s ease-in-out 0s;
+  -webkit-transition: all 0.5s ease-in-out 0s;
+  transition: all 0.5s ease-in-out 0s;
+}
+
+#footer p {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  margin-top: 0;
+  text-transform: uppercase;
+}
+
+.copyright{
+  font-size: 0.3rem;
+}
+
+.credits {
+  font-size: 0.25rem;
 }
 
 
@@ -118,11 +236,11 @@ body {
     font-size: 1rem;
   }
 
-  .footer{
+  .footer, .copyright{
     font-size:0.3rem;
   }
 
-  .fa{
+  .pro-icons{
     font-size:2.5rem;
   }
 }
@@ -138,11 +256,11 @@ body {
     font-size: 0.56rem;
   }
 
-  .footer{
+  .footer, .copyright{
     font-size:0.3rem;
   }
 
-  .fa{
+  .pro-icons{
     font-size:2rem;
   }
 }
