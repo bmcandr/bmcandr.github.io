@@ -107,8 +107,8 @@ body {
 }
 
 
-/* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
-@media screen and (max-width: 600px) {
+/* If the screen size is 750px wide or less, reduce font-sizeß */
+@media screen and (max-width: 750px) {
   .description h1 {
     font-size: 1.5rem;
   }
