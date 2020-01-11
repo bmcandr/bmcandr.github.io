@@ -1,13 +1,17 @@
 /* default font */
 * {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Barlow', sans-serif;
 }
 
 body {
   padding: 0;
   margin: 0;
-  background: #E1E5E3;
+  background-image: url('../images/canyonlands_3072x1920_30q_alt.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
 }
+
 /*--- navigation bar ---*/
 .navbar {
   background: #fff;
@@ -30,20 +34,13 @@ body {
   justify-content: flex-end;
 }
 
-.header {
-  background-image: url('../images/canyonlands_3072x1920_30q_alt.jpg');
-  background-size: cover;
-  background-position: center;
-  position: relative;
-}
-
 .overlay {
   position: absolute;
   min-height: 100%;
   min-width: 100%;
   left: 0;
   top: 0;
-  background: rgba(0, 0, 0, 0.65);
+  background: rgba(0, 0, 0, 0.6);
 }
 
 .description {
@@ -52,16 +49,20 @@ body {
   top: 45%;
   transform: translate(-50%, -55%);
   text-align: center;
-  font-weight: 300;
 }
 
 .description h1 {
-  color: #fff;
+  font-size: 3rem;
+  font-weight: 200;
+  color: white;
 }
 .description p {
-  color: #fff;
-  font-size: 1.3rem;
+  font-family: Barlow;
+  font-size: 1.25rem;
+  font-weight: 100;
+  font-style: italic;
   line-height: 1.5;
+  color: white;
 }
 
 .description button {
@@ -76,12 +77,29 @@ body {
   color:#284222;
 }
 
+/* footer  */
+.footer{
+  font-family: Oswald;
+  font-size: 1rem;
+  font-weight: 100;
+  font-style: italic;
+  text-align: center;
+  position: absolute;
+  bottom: 0%;
+  width:100%;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.footer-text{
+  color: rgba(188, 196, 174, 0.35);
+}
+
+/* Github and LinkedIn links */
 .fa{
-  font-size: 36px;
-  color: rgba(174, 184, 172, 0.65);
+  font-size: 3rem;
+  color: rgba(188, 196, 174, 0.65);
 }
 
 .fa:hover{
-  font-size: 36px;
   color: rgba(255, 255, 255, 0.65);
 }
