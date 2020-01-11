@@ -107,18 +107,22 @@ body {
 }
 
 
-/* If the screen size is 375px wide or less, reduce font-sizeß */
+/* If the screen size is 375px wide or less, reduce font-size */
 @media screen and (orientation : portrait) and (max-width: 375px) {
 
   .description h1 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 
   .description p {
-    font-size: 0.75rem;
+    font-size: 0.55rem;
   }
 
   .footer{
-    font-size:0.5rem;
+    font-size:0.3rem;
+  }
+
+  .fa{
+    font-size:2rem;
   }
 }
