@@ -56,6 +56,7 @@ body {
   font-weight: 200;
   color: white;
 }
+
 .description p {
   font-family: Barlow;
   font-size: 1.25rem;
@@ -71,6 +72,7 @@ body {
   border-radius: 5;
   color:#fff;
 }
+
 .description button:hover {
   border:1px solid #284222;
   background:#fff;
@@ -102,4 +104,20 @@ body {
 
 .fa:hover{
   color: rgba(255, 255, 255, 0.65);
+}
+
+
+/* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+@media screen and (max-width: 600px) {
+  .description h1 {
+    font-size: 1.5rem;
+  }
+
+  .description p {
+    font-size: 0.75rem;
+  }
+
+  .footer{
+    font-size:0.5rem;
+  }
 }
