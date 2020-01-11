@@ -52,14 +52,14 @@ body {
 }
 
 .description h1 {
-  font-size: 3rem;
+  font-size: 4vw;
   font-weight: 200;
   color: white;
 }
 
 .description p {
   font-family: Barlow;
-  font-size: 1.25rem;
+  font-size: 2.25vw;
   font-weight: 100;
   font-style: italic;
   line-height: 1.5;
@@ -82,7 +82,7 @@ body {
 /* footer  */
 .footer{
   font-family: Barlow;
-  font-size: 1rem;
+  font-size: 2vw;
   font-weight: 100;
   font-style: italic;
   text-align: center;
@@ -93,7 +93,7 @@ body {
 }
 
 .footer-text{
-  color: rgba(188, 196, 174, 0.35);
+  color: rgba(188, 196, 174, 0.45);
 }
 
 /* Github and LinkedIn links */
@@ -106,8 +106,28 @@ body {
   color: rgba(255, 255, 255, 0.65);
 }
 
+/*
+If the screen size is 800px wide or less, reduce font-size
+@media screen and (orientation : portrait) and (max-width: 800px) {
 
-/* If the screen size is 375px wide or less, reduce font-size */
+  .description h1 {
+    font-size: 2em;
+  }
+
+  .description p {
+    font-size: 1rem;
+  }
+
+  .footer{
+    font-size:0.3rem;
+  }
+
+  .fa{
+    font-size:2.5rem;
+  }
+}
+
+If the screen size is 375px wide or less, reduce font-size
 @media screen and (orientation : portrait) and (max-width: 375px) {
 
   .description h1 {
@@ -115,7 +135,7 @@ body {
   }
 
   .description p {
-    font-size: 0.55rem;
+    font-size: 0.56rem;
   }
 
   .footer{
@@ -125,4 +145,4 @@ body {
   .fa{
     font-size:2rem;
   }
-}
+} */
