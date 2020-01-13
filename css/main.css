@@ -23,7 +23,7 @@ hr.divider {
 }
 
 hr.skill-divider {
-    max-width: 45%;
+    max-width: 10rem;
     border-width: 0.15rem;
     border-color: rgba(147, 164, 144, 1);
 }
