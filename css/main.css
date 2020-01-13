@@ -1,110 +1,80 @@
-/* default font */
 * {
   font-family: 'Barlow', sans-serif;
 }
-/*                       */
-/*--- navigation bar
-/*                       */
 
-.navbar {
-  background: #fff;
-}
-.nav-link,
-.navbar-brand {
-  color: #284222;
-  cursor: pointer;
-  font-weight: 300;
-  /* font-style: italic; */
-}
-.nav-link {
-  margin-right: 1em !important;
-}
-.nav-link:hover {
-  color: #798975;
-  /* font-weight: 500; */
-}
-.navbar-collapse {
-  justify-content: flex-end;
-}
-
-/*----------------------------------------------------------------------------------*/
-/*  Header
-/*-----------------------------------------------------------------------------------*/
-
-#header {
-  background: url("../images/canyonlands_3072x1920_30q_alt.jpg") repeat scroll center center / cover;
-  height: 100vh;
+body,
+html {
   width: 100%;
+  height: 100%;
 }
 
-#overlay {
-  /* position: absolute;
-  min-height: 100%;
-  min-width: 100%;
-  left: 0;
-  top: 0; */
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid;
+  color: rgba(147, 164, 144, 1);
+}
+
+hr.divider {
+    max-width: 45%;
+    border-width: .1rem;
+    border-color: rgba(147, 164, 144, 1);
+}
+
+hr.skill-divider {
+    max-width: 45%;
+    border-width: 0.15rem;
+    border-color: rgba(147, 164, 144, 1);
+}
+
+.masthead {
+  position: relative;
+  background: url("/Users/brendanmcandrew/Desktop/repos/bmcandr.github.io/images/canyonlands_3072x1920_30q_alt.jpg") no-repeat scroll center center / cover;
   height: 100vh;
-  width: 100%;
+  width: 100vw;
+}
+
+.overlay {
   background: rgba(0, 0, 0, 0.6);
-}
-
-.description {
-  left: 50%;
   position: absolute;
-  top: 45%;
-  transform: translate(-50%, -55%);
-  text-align: center;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
 }
 
-.description h1 {
+.name {
   font-size: 3rem;
-  font-weight: 200;
   color: white;
 }
 
-.description p {
-  font-family: Barlow;
-  font-size: 1.25rem;
-  font-weight: 100;
+.tagline {
+  font-size: 1rem;
   font-style: italic;
-  line-height: 1.5;
   color: white;
-}
-
-.description button {
-  border:1px solid #5E7159;
-  background:#284222;
-  border-radius: 5;
-  color:#fff;
-}
-
-.description button:hover {
-  border:1px solid #284222;
-  background:#fff;
-  color:#284222;
 }
 
 /* Github and LinkedIn links */
-#header .pro-icons {
+.pro-icons {
   width: 100%
 }
 
-#header .pro-icons ul {
+.pro-icons ul {
   display: inline-block;
   float: none;
   /* margin: 0 0 0px 0; */
 }
 
-#header .pro-icons ul li {
+.pro-icons ul li {
   float: left;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
 
-#header .pro-icons ul li a {
+.pro-icons ul li a {
   font-size: 3rem;
   color: rgba(147, 164, 144, 0.65);
-
   -moz-transition: all 0.5s ease-in-out 0s;
   -ms-transition: all 0.5s ease-in-out 0s;
   -o-transition: all 0.5s ease-in-out 0s;
@@ -112,9 +82,8 @@
   transition: all 0.5s ease-in-out 0s;
 }
 
-#header .pro-icons ul li a:hover {
+.pro-icons ul li a:hover {
   color: rgba(255, 255, 255, 0.65);
-
   -moz-transition: all 0.5s ease-in-out 0s;
   -ms-transition: all 0.5s ease-in-out 0s;
   -o-transition: all 0.5s ease-in-out 0s;
@@ -122,51 +91,46 @@
   transition: all 0.5s ease-in-out 0s;
 }
 
-/*-----------------------------------------------------------------------------------*/
-/*  Aout-us
-/*-----------------------------------------------------------------------------------*/
-
-#about {
-  width: 100%;
-  height: auto;
-  background: #f7f7f7;
-  padding-top: 190px;
+.skills {
+  /* height: 50vh; */
+  background: url('/Users/brendanmcandrew/Desktop/repos/bmcandr.github.io/images/the_needles_1953_3072_crop.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
-#about .div-img-bg {
-  padding-bottom: 30px;
-  border: 20px solid #b8a07e;
+.content-section {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
 }
 
-#about .div-img-bg .about-img img {
-  width: 100%;
-  box-shadow: 0px 0px 85px 0px rgba(0, 0, 0, 0.14);
-  margin-top: -60px;
-  margin-left: 40px;
-  height: 400px;
-  object-fit: cover;
+.content-section-heading {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
 }
 
-#about .about-descr .p-heading {
-  font-family: 'Playfair Display', serif;
-  font-size: 28px;
-  text-align: left;
+.service-icon {
+  background-color: #fff;
+  color: rgba(147, 164, 144, 1);
+  height: 7rem;
+  width: 7rem;
+  display: block;
+  line-height: 7.5rem;
+  font-size: 3rem;
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
 }
 
-#about .about-descr .separator {
-  max-width: 80%;
-  margin-bottom: 0;
-  text-align: left;
+.row {
+  padding-bottom: 3rem;
 }
 
 /*-----------------------------------------------------------------------------------*/
 /*  Footer
 /*-----------------------------------------------------------------------------------*/
-
 #footer {
   background: #E4E8E3;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 20px;
+  /* padding-bottom: 20px; */
 }
 
 #footer .socials-media {
@@ -186,7 +150,7 @@
 }
 
 #footer .socials-media ul li a {
-  font-size: 24px;
+  font-size: 1.25rem;
   color: #C9D1C7;
   letter-spacing: 0.1em;
   font-weight: 500;
@@ -216,7 +180,7 @@
   text-transform: uppercase;
 }
 
-.copyright{
+.copyright {
   font-size: 0.3rem;
 }
 
@@ -224,43 +188,50 @@
   font-size: 0.25rem;
 }
 
-
 /* If the screen size is 800px wide or less, reduce font-size */
 @media screen and (max-width: 800px) {
-
-  .description h1 {
+  .name {
     font-size: 2em;
   }
 
-  .description p {
+  .tagline {
     font-size: 1rem;
   }
 
-  .footer, .copyright{
-    font-size:0.3rem;
+  .footer, .copyright {
+    font-size: 0.3rem;
   }
 
-  .pro-icons{
-    font-size:2.5rem;
+  .pro-icons {
+    font-size: 2.5rem;
+  }
+
+  .content-section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
   }
 }
 
 /* If the screen size is 375px wide or less, reduce font-size */
 @media screen and (max-width: 375px) {
-
-  .description h1 {
+  .name {
     font-size: 1.4rem;
   }
 
-  .description p {
+  .tagline {
     font-size: 0.56rem;
   }
 
-  .footer, .copyright{
-    font-size:0.3rem;
+  .footer, .copyright {
+    font-size: 0.3rem;
   }
 
-  .pro-icons{
-    font-size:2rem;
+  .pro-icons {
+    font-size: 2rem;
+  }
+
+  .content-section {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
 }
