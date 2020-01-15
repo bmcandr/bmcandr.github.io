@@ -1,5 +1,5 @@
 * {
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Rajdhani', sans-serif;
 }
 
 body,
@@ -50,8 +50,7 @@ hr.skill-divider {
 }
 
 .tagline {
-  font-size: 1rem;
-  font-style: italic;
+  font-size: 1.5rem;
   color: white;
 }
 
@@ -97,6 +96,11 @@ hr.skill-divider {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+}
+
+.skill-label {
+  text-transform: lowercase;
+  font-weight: 600;
 }
 
 .content-section {
@@ -173,19 +177,19 @@ hr.skill-divider {
 }
 
 #footer p {
-  font-size: 12px;
+  /* font-size: 12px; */
   letter-spacing: 0.1em;
   font-weight: 500;
   margin-top: 0;
-  text-transform: uppercase;
+  text-transform: lowercase;
 }
 
 .copyright {
-  font-size: 0.3rem;
+  font-size: 0.75rem;
 }
 
 .credits {
-  font-size: 0.25rem;
+  font-size: 0.75rem;
 }
 
 /* If the screen size is 800px wide or less, reduce font-size */
