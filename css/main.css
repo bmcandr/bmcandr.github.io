@@ -135,17 +135,22 @@ hr.skill-divider {
 #footer {
   background: #E4E8E3;
   padding-top: 20px;
-  /* padding-bottom: 20px; */
+  -moz-transition: all 0.5s ease-in-out 0s;
+  -ms-transition: all 0.5s ease-in-out 0s;
+  -o-transition: all 0.5s ease-in-out 0s;
+  -webkit-transition: all 0.5s ease-in-out 0s;
+  transition: all 0.5s ease-in-out 0s;
 }
 
 #footer .socials-media {
   width: 100%;
+  color: rgb(201, 209, 199);
 }
 
 #footer .socials-media ul {
   display: inline-block;
   float: none;
-  margin: 0 0 20px 0;
+  /* margin: 0 0 20px 0; */
 }
 
 #footer .socials-media ul li {
@@ -156,41 +161,31 @@ hr.skill-divider {
 
 #footer .socials-media ul li a {
   font-size: 1.25rem;
-  color: #C9D1C7;
   letter-spacing: 0.1em;
   font-weight: 500;
   background: transparent;
   text-transform: uppercase;
-  -moz-transition: all 0.5s ease-in-out 0s;
-  -ms-transition: all 0.5s ease-in-out 0s;
-  -o-transition: all 0.5s ease-in-out 0s;
-  -webkit-transition: all 0.5s ease-in-out 0s;
-  transition: all 0.5s ease-in-out 0s;
 }
 
-#footer .socials-media ul li a:hover {
-  color: #93A490;
-  -moz-transition: all 0.5s ease-in-out 0s;
-  -ms-transition: all 0.5s ease-in-out 0s;
-  -o-transition: all 0.5s ease-in-out 0s;
-  -webkit-transition: all 0.5s ease-in-out 0s;
-  transition: all 0.5s ease-in-out 0s;
-}
-
-#footer p {
-  /* font-size: 12px; */
+#footer .fab p {
   letter-spacing: 0.1em;
   font-weight: 500;
   margin-top: 0;
   text-transform: lowercase;
 }
 
-.copyright {
-  font-size: 0.75rem;
+.hover-darken:hover {
+  color: rgb(147, 164, 144);
+  -moz-transition: all 0.5s ease-in-out 0s;
+  -ms-transition: all 0.5s ease-in-out 0s;
+  -o-transition: all 0.5s ease-in-out 0s;
+  -webkit-transition: all 0.5s ease-in-out 0s;
+  transition: all 0.5s ease-in-out 0s;
 }
 
 .credits {
   font-size: 0.75rem;
+  color: rgb(201, 209, 199);
 }
 
 /* If the screen size is 800px wide or less, reduce font-size */
