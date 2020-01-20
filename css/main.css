@@ -1,3 +1,4 @@
+/* css for the index page */
 * {
   font-family: 'Rajdhani', sans-serif;
   text-transform: lowercase;
@@ -63,7 +64,6 @@ hr.skill-divider {
 .pro-icons ul {
   display: inline-block;
   float: none;
-  /* margin: 0 0 0px 0; */
 }
 
 .pro-icons ul li {
@@ -92,7 +92,6 @@ hr.skill-divider {
 }
 
 .skills {
-  /* height: 50vh; */
   background: url('../images/UT_TheNeedles_252344_1953_62500_geo_tif.jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -150,7 +149,6 @@ hr.skill-divider {
 #footer .socials-media ul {
   display: inline-block;
   float: none;
-  /* margin: 0 0 20px 0; */
 }
 
 #footer .socials-media ul li {
