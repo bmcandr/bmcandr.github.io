@@ -91,6 +91,10 @@ hr.skill-divider {
   transition: all 0.5s ease-in-out 0s;
 }
 
+.bio-title{
+  color: rgb(129, 144, 126);
+}
+
 .skills {
   background: url('../images/UT_TheNeedles_252344_1953_62500_geo_tif.jpg');
   background-repeat: no-repeat;
@@ -99,8 +103,12 @@ hr.skill-divider {
 }
 
 .skill-label {
-  text-transform: lowercase;
   font-weight: 600;
+  color: rgb(129, 144, 126);
+}
+
+.skill-subheading{
+  color: rgb(129, 144, 126);
 }
 
 .content-section {
@@ -173,7 +181,7 @@ hr.skill-divider {
 }
 
 .hover-darken:hover {
-  color: rgb(147, 164, 144);
+  color: rgb(129, 144, 126);
   -moz-transition: all 0.5s ease-in-out 0s;
   -ms-transition: all 0.5s ease-in-out 0s;
   -o-transition: all 0.5s ease-in-out 0s;
