@@ -92,7 +92,7 @@ hr.skill-divider {
 }
 
 .bio-title{
-  color: rgb(129, 144, 126);
+  color: #fff;
 }
 
 .skills {
@@ -103,12 +103,12 @@ hr.skill-divider {
 }
 
 .skill-label {
-  font-weight: 600;
-  color: rgb(129, 144, 126);
+  font-weight: 300;
+  color: #fff;
 }
 
 .skill-subheading{
-  color: rgb(129, 144, 126);
+  color: #fff;
 }
 
 .content-section {
@@ -117,7 +117,7 @@ hr.skill-divider {
 }
 
 .content-section-heading {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(0, 0, 0, 0.6);;
   border-radius: 20px;
 }
 
