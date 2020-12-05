@@ -19,15 +19,15 @@ hr {
 }
 
 hr.divider {
-    max-width: 45%;
-    border-width: .1rem;
-    border-color: rgba(147, 164, 144, 1);
+  max-width: 45%;
+  border-width: .1rem;
+  border-color: rgba(147, 164, 144, 1);
 }
 
 hr.skill-divider {
-    max-width: 10rem;
-    border-width: 0.15rem;
-    border-color: rgba(147, 164, 144, 1);
+  max-width: 80%;
+  border-width: 0.15rem;
+  border-color: rgba(147, 164, 144, 1);
 }
 
 .masthead {
@@ -44,6 +44,10 @@ hr.skill-divider {
   left: 0;
   height: 100%;
   width: 100%;
+}
+
+.low-overlay {
+  background: rgba(0, 0, 0, 0.7);
 }
 
 .name {
@@ -92,7 +96,9 @@ hr.skill-divider {
 }
 
 .bio-title{
-  color: rgb(129, 144, 126);
+  color: #fff;
+  font-size: 2em;
+  vertical-align: bottom;
 }
 
 .skills {
@@ -102,13 +108,15 @@ hr.skill-divider {
   background-attachment: fixed;
 }
 
-.skill-label {
-  font-weight: 600;
-  color: rgb(129, 144, 126);
+.skill-heading {
+  color: #fff;
+  font-size: 1.25em;
+  font-weight: 400;
 }
 
 .skill-subheading{
-  color: rgb(129, 144, 126);
+  color: #fff;
+  font-weight: 300;
 }
 
 .content-section {
@@ -117,23 +125,19 @@ hr.skill-divider {
 }
 
 .content-section-heading {
-  background: rgba(255, 255, 255, 0.8);
   border-radius: 20px;
 }
 
 .service-icon {
-  background-color: #fff;
-  color: rgba(147, 164, 144, 1);
-  height: 7rem;
-  width: 7rem;
-  display: block;
-  line-height: 7.5rem;
-  font-size: 3rem;
-  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
+  color: rgba(147, 164, 144, 0.7);
+  font-size: 3em;
+  font-weight: 300;
+  padding-right: 0.25em;
 }
 
-.row {
-  padding-bottom: 3rem;
+.sub-icon {
+  color: rgba(147, 164, 144, 0.8);
+  font-size: 2em;
 }
 
 /*-----------------------------------------------------------------------------------*/
@@ -149,23 +153,23 @@ hr.skill-divider {
   transition: all 0.5s ease-in-out 0s;
 }
 
-#footer .socials-media {
+#footer .site-info {
   width: 100%;
   color: rgb(201, 209, 199);
 }
 
-#footer .socials-media ul {
+#footer .site-info ul {
   display: inline-block;
   float: none;
 }
 
-#footer .socials-media ul li {
+#footer .site-info ul li {
   float: left;
   margin-left: 10px;
   margin-right: 10px;
 }
 
-#footer .socials-media ul li a {
+#footer .site-info ul li a {
   font-size: 1.25rem;
   letter-spacing: 0.1em;
   font-weight: 500;
@@ -189,55 +193,49 @@ hr.skill-divider {
   transition: all 0.5s ease-in-out 0s;
 }
 
-.credits {
-  font-size: 0.75rem;
+.credits, .citations {
+  font-size: 1em;
   color: rgb(176, 183, 174);
 }
 
 /* If the screen size is 800px wide or less, reduce font-size */
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1325px) {
   .name {
     font-size: 2em;
   }
 
   .tagline {
-    font-size: 1rem;
+    font-size: 1em;
   }
 
-  .footer, .copyright {
-    font-size: 0.3rem;
+  .footer, .citations, .credits {
+    font-size: 0.75em;
   }
 
   .pro-icons {
-    font-size: 2.5rem;
+    font-size: 1.5em;
   }
 
-  .content-section {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+  .content-section-heading {
+    font-size: 0.75em;
   }
 }
 
 /* If the screen size is 375px wide or less, reduce font-size */
 @media screen and (max-width: 375px) {
   .name {
-    font-size: 1.4rem;
+    font-size: 1.5em;
   }
 
   .tagline {
-    font-size: 0.56rem;
+    font-size: 0.85em;
   }
 
-  .footer, .copyright {
-    font-size: 0.3rem;
+  .footer, .citations, .credits {
+    font-size: 0.3em;
   }
 
   .pro-icons {
-    font-size: 2rem;
-  }
-
-  .content-section {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    font-size: 2em;
   }
 }
