@@ -19,15 +19,15 @@ hr {
 }
 
 hr.divider {
-    max-width: 45%;
-    border-width: .1rem;
-    border-color: rgba(147, 164, 144, 1);
+  max-width: 45%;
+  border-width: .1rem;
+  border-color: rgba(147, 164, 144, 1);
 }
 
 hr.skill-divider {
-    max-width: 10rem;
-    border-width: 0.15rem;
-    border-color: rgba(147, 164, 144, 1);
+  max-width: 10rem;
+  border-width: 0.15rem;
+  border-color: rgba(147, 164, 144, 1);
 }
 
 .masthead {
