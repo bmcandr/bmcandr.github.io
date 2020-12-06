@@ -1,40 +1,40 @@
 /* css for the index page */
+
+/* global font settings */
 * {
   font-family: 'Rajdhani', sans-serif;
   text-transform: lowercase;
 }
 
+/* use the whole viewport */
 body,
 html {
   width: 100%;
   height: 100%;
 }
 
-hr {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  border: 0;
+/* horizontal rule "divider" style */
+.divider {
+  margin-top: 1em;
+  margin-bottom: 1em;
   border-top: 1px solid;
-  color: rgba(147, 164, 144, 1);
+  border-color: rgba(147, 164, 144, 1);
 }
 
-hr.divider {
+.name-divider {
   max-width: 45%;
-  border-width: .1rem;
-  border-color: rgba(147, 164, 144, 1);
 }
 
-hr.skill-divider {
+hr.bio-divider {
   max-width: 80%;
-  border-width: 0.15rem;
-  border-color: rgba(147, 164, 144, 1);
 }
 
+/* landing page style */
 .masthead {
   position: relative;
   background: url("../images/LC08_L1TP_036033_20180913_20180928_01_T1.jpg") no-repeat scroll center center / cover;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
 }
 
 .overlay {
@@ -46,17 +46,17 @@ hr.skill-divider {
   width: 100%;
 }
 
-.low-overlay {
-  background: rgba(0, 0, 0, 0.7);
+.name-section {
+  height: 100%;
 }
 
 .name {
-  font-size: 3rem;
+  font-size: 3em;
   color: white;
 }
 
 .tagline {
-  font-size: 1.5rem;
+  font-size: 1.5em;
   color: white;
 }
 
@@ -72,12 +72,12 @@ hr.skill-divider {
 
 .pro-icons ul li {
   float: left;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
 }
 
 .pro-icons ul li a {
-  font-size: 3rem;
+  font-size: 3em;
   color: rgba(147, 164, 144, 0.65);
   -moz-transition: all 0.5s ease-in-out 0s;
   -ms-transition: all 0.5s ease-in-out 0s;
@@ -95,33 +95,45 @@ hr.skill-divider {
   transition: all 0.5s ease-in-out 0s;
 }
 
-.bio-title{
+/* bio section style (below the fold) */
+.bio-section {
+  position: relative;
+}
+
+.bio-background {
+  background: url('../images/UT_TheNeedles_252344_1953_62500_geo_tif.jpg');
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  padding: 0;
+  z-index: -10;
+}
+
+.bio-overlay {
+  background: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  border-radius: 15px;
+}
+
+.bio-title {
   color: #fff;
   font-size: 2em;
   vertical-align: bottom;
 }
 
-.skills {
-  background: url('../images/UT_TheNeedles_252344_1953_62500_geo_tif.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-}
-
-.skill-heading {
+.bio-heading {
   color: #fff;
   font-size: 1.25em;
   font-weight: 400;
 }
 
-.skill-subheading{
+.bio-subheading{
   color: #fff;
   font-weight: 300;
-}
-
-.content-section {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
 }
 
 .content-section-heading {
@@ -140,9 +152,7 @@ hr.skill-divider {
   font-size: 2em;
 }
 
-/*-----------------------------------------------------------------------------------*/
-/*  Footer
-/*-----------------------------------------------------------------------------------*/
+/* footer style */
 #footer {
   background: #E4E8E3;
   padding-top: 20px;
@@ -198,8 +208,11 @@ hr.skill-divider {
   color: rgb(176, 183, 174);
 }
 
-/* If the screen size is 800px wide or less, reduce font-size */
+/* bootstrap adaptive styles */
+
+/* if the screen size is 1325px wide or less, adjust formatting */
 @media screen and (max-width: 1325px) {
+
   .name {
     font-size: 2em;
   }
@@ -212,16 +225,23 @@ hr.skill-divider {
     font-size: 0.75em;
   }
 
-  .pro-icons {
-    font-size: 1.5em;
-  }
-
   .content-section-heading {
     font-size: 0.75em;
   }
 }
 
-/* If the screen size is 375px wide or less, reduce font-size */
+/* if the screen size is 836px wide or less, adjust formatting */
+@media screen and (max-width: 836px) {
+  .name {
+    font-size:1.75em;
+  }
+
+  .content-section-heading {
+    padding-bottom: 1em;
+  }
+}
+
+/* If the screen size is 375px wide or less, adjust formatting */
 @media screen and (max-width: 375px) {
   .name {
     font-size: 1.5em;
@@ -230,8 +250,8 @@ hr.skill-divider {
   .tagline {
     font-size: 0.85em;
   }
-  
+
   .pro-icons {
-    font-size: 2em;
+    font-size: 1em;
   }
 }
