@@ -131,9 +131,21 @@ hr.bio-divider {
   font-weight: 400;
 }
 
-.bio-subheading{
+.bio-subheading {
   color: #fff;
   font-weight: 300;
+}
+
+a:link a:visited {
+  color: #fff;
+}
+
+a:visited {
+  color: #fff;
+}
+
+a:hover {
+  color: rgba(147, 164, 144, 1);
 }
 
 .content-section-heading {
