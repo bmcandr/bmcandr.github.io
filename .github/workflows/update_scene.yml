@@ -8,7 +8,7 @@ jobs:
   update-scene:
     runs-on: ubuntu-latest
     env:
-      MAP_DIR: map_view
+      MAP_DIR: s2_scene_map
       MAP_FILE: map.html
     steps:
       - uses: actions/checkout@v3
