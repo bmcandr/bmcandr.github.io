@@ -10,6 +10,7 @@ jobs:
     env:
       SCRIPT_DIR: stac_tile_map
       SCRIPT_NAME: create_map.py
+      GEOJSON_FILE: national-parks.geojson
       MAP_FILE: map.html
     steps:
       - uses: actions/checkout@v3
@@ -18,7 +19,7 @@ jobs:
           python-version: 3.10.6
           cache: pip
       - run: pip install -r $SCRIPT_DIR/requirements.txt
-      - run: python $SCRIPT_DIR/$SCRIPT_NAME --output $MAP_FILE
+      - run: python $SCRIPT_DIR/$SCRIPT_NAME $SCRIPT_DIR/$GEOJSON_FILE $MAP_FILE
       - uses: EndBug/add-and-commit@v9
         with:
           message: "Update map"
