@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       SCRIPT_DIR: stac_tile_map
-      SCRIPT_NAME: update_map.py
+      SCRIPT_NAME: create_map.py
       MAP_FILE: map.html
     steps:
       - uses: actions/checkout@v3
