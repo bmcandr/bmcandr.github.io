@@ -1,5 +1,5 @@
 ---
-name: Update S2 Scene
+name: Create map from STAC Item
 on:
   workflow_dispatch:
   schedule:
@@ -8,7 +8,7 @@ jobs:
   update-scene:
     runs-on: ubuntu-latest
     env:
-      MAP_DIR: s2_scene_map
+      MAP_DIR: stac_tile_map
       MAP_FILE: map.html
     steps:
       - uses: actions/checkout@v3
@@ -20,4 +20,4 @@ jobs:
       - run: python $MAP_DIR/update_s2_scene.py --output $MAP_FILE
       - uses: EndBug/add-and-commit@v9
         with:
-          message: "Update Sentinel-2 scene"
+          message: "Update map"
