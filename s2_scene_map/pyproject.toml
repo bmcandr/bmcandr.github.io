@@ -1,10 +1,9 @@
 [tool.poetry]
-name = "map-view"
+name = "s2_scene_map"
 version = "0.1.0"
 description = ""
 authors = ["Brendan McAndrew <19274445+bmcandr@users.noreply.github.com>"]
 readme = "README.md"
-packages = [{include = "map_view"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
