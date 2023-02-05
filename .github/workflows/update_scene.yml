@@ -8,7 +8,8 @@ jobs:
   update-scene:
     runs-on: ubuntu-latest
     env:
-      MAP_DIR: stac_tile_map
+      SCRIPT_DIR: stac_tile_map
+      SCRIPT_NAME: update_map.py
       MAP_FILE: map.html
     steps:
       - uses: actions/checkout@v3
@@ -16,8 +17,8 @@ jobs:
         with:
           python-version: 3.10.6
           cache: pip
-      - run: pip install -r $MAP_DIR/requirements.txt
-      - run: python $MAP_DIR/update_s2_scene.py --output $MAP_FILE
+      - run: pip install -r $SCRIPT_DIR/requirements.txt
+      - run: python $SCRIPT_DIR/$SCRIPT_NAME --output $MAP_FILE
       - uses: EndBug/add-and-commit@v9
         with:
           message: "Update map"
