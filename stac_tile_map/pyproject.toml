@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "s2_scene_map"
+name = "stac_tile_map"
 version = "0.1.0"
 description = ""
 authors = ["Brendan McAndrew <19274445+bmcandr@users.noreply.github.com>"]
