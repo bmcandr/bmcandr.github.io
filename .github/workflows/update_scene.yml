@@ -18,7 +18,6 @@ jobs:
           cache: pip
       - uses: EndBug/add-and-commit@v9
         with:
-          add: $MAP_FILE
           message: "Update Sentinel-2 scene"
       - run: pip install -r $MAP_DIR/requirements.txt
       - run: python $MAP_DIR/update_s2_scene.py --output $MAP_FILE
