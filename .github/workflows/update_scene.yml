@@ -1,0 +1,23 @@
+---
+name: Update S2 Scene
+on:
+  schedule:
+    - cron: 0 0 * * *
+jobs:
+  update-scene:
+    runs-on: ubuntu-latest
+    env:
+      MAP_DIR: map_view
+      MAP_FILE: map.html
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: 3.10.6
+          cache: pip
+      - uses: EndBug/add-and-commit@v9
+        with:
+          add: $MAP_FILE
+          message: "Update Sentinel-2 scene"
+      - run: pip install -r $MAP_DIR/requirements.txt
+      - run: python $MAP_DIR/update_s2_scene.py --output $MAP_FILE

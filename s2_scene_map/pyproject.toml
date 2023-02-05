@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "map-view"
+version = "0.1.0"
+description = ""
+authors = ["Brendan McAndrew <19274445+bmcandr@users.noreply.github.com>"]
+readme = "README.md"
+packages = [{include = "map_view"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pystac-client = "^0.6.0"
+folium = "^0.14.0"
+shapely = "^2.0.1"
+click = "^8.1.3"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.1.0"
+isort = "^5.12.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
