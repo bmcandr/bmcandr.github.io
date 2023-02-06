@@ -1,6 +1,6 @@
 # Display STAC COG with tiler on `folium` map
 
-This is the result of a fun little weekend project inspired by Scott Henderson's [`share-a-map`](https://github.com/scottyhq/share-a-map) repository.
+This is the result of a fun little weekend project inspired by @scottyhq's [`share-a-map`](https://github.com/scottyhq/share-a-map) repository.
 
 The `create_map.py` script:
 
