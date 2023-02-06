@@ -11,3 +11,5 @@ The `create_map.py` script:
 
 
 I've also created a GitHub Actions workflow to run this script every so often and commit the result to the repository, thereby periodically updating the map. Neat!
+
+View the map here: https://bmcandr.github.io/map.html
