@@ -153,7 +153,9 @@ def _create_tile_layer_from_item(
     :rtype: folium.TileLayer
     """
     virtual_tiles = f"{tiler_url}?url={item.assets[asset_key].href}"
-    return folium.TileLayer(tiles=virtual_tiles, overlay=True, attr="IndigoAg")
+    return folium.TileLayer(
+        tiles=virtual_tiles, name="COG", overlay=True, attr="IndigoAg"
+    )
 
 
 def _add_stac_info_to_feature(
@@ -184,16 +186,20 @@ def _add_stac_info_to_feature(
     return feature
 
 
-def _create_geojson_layer(geojson: Dict) -> folium.GeoJson:
+def _create_geojson_layer(geojson: Dict, name: str) -> folium.GeoJson:
     """Create a folium layer from GeoJSON dictionary.
 
     :param geojson: A GeoJSON-like dictionary.
     :type geojson: Dict
+    :param name: Layer name
+    :type name: str
     :return: _description_
     :rtype: folium.GeoJson
     """
     popup_fields = list(geojson["features"][0]["properties"].keys())
-    return folium.GeoJson(geojson, popup=folium.GeoJsonPopup(fields=popup_fields))
+    return folium.GeoJson(
+        geojson, name=name, popup=folium.GeoJsonPopup(fields=popup_fields)
+    )
 
 
 @click.command()
@@ -258,9 +264,11 @@ def main(
     )
     logger.info("Adding GeoJSON layer to map")
     marker_layer = _create_geojson_layer(
-        geojson=dict(features=[updated_feature]),
+        geojson=dict(features=[updated_feature]), name="Marker"
     )
     marker_layer.add_to(m)
+
+    folium.LayerControl().add_to(m)
 
     logger.info(f"Saving folium map to {output_file}")
     m.save(output_file)
