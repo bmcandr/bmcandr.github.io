@@ -25,7 +25,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_e691b149498ccd1d25ed2acf76ba94ef {
+                #map_bc7aea23a14299aef13d66fe68cb6d02 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -55,16 +55,16 @@
 <body>
     
     
-            <div class="folium-map" id="map_e691b149498ccd1d25ed2acf76ba94ef" ></div>
+            <div class="folium-map" id="map_bc7aea23a14299aef13d66fe68cb6d02" ></div>
         
 </body>
 <script>
     
     
-            var map_e691b149498ccd1d25ed2acf76ba94ef = L.map(
-                "map_e691b149498ccd1d25ed2acf76ba94ef",
+            var map_bc7aea23a14299aef13d66fe68cb6d02 = L.map(
+                "map_bc7aea23a14299aef13d66fe68cb6d02",
                 {
-                    center: [32.9429585475724, -111.48289857857283],
+                    center: [36.53857060257557, -79.26956737542993],
                     crs: L.CRS.EPSG3857,
                     zoom: 10,
                     zoomControl: true,
@@ -76,38 +76,38 @@
 
         
     
-            var tile_layer_dd34cbeba10fed4ec3fc0a07cb7ff62e = L.tileLayer(
+            var tile_layer_ac37a23ee2935b5bd9fbb8ee95d3ebd5 = L.tileLayer(
                 "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
                 {"attribution": "\u0026copy; \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca target=\"_blank\" href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca target=\"_blank\" href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
-            ).addTo(map_e691b149498ccd1d25ed2acf76ba94ef);
+            ).addTo(map_bc7aea23a14299aef13d66fe68cb6d02);
         
     
-            var tile_layer_d433758cf56a80d1342e0011528375df = L.tileLayer(
-                "https://api.cogeo.xyz/cog/tiles/{z}/{x}/{y}?url=https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/12/S/VB/2023/1/S2A_12SVB_20230124_0_L2A/TCI.tif",
+            var tile_layer_44a6892e15f8b0c42f7f492ad89699c9 = L.tileLayer(
+                "https://api.cogeo.xyz/cog/tiles/{z}/{x}/{y}?url=https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/17/S/PA/2023/1/S2B_17SPA_20230113_0_L2A/TCI.tif",
                 {"attribution": "IndigoAg", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
-            ).addTo(map_e691b149498ccd1d25ed2acf76ba94ef);
+            ).addTo(map_bc7aea23a14299aef13d66fe68cb6d02);
         
     
 
-        function geo_json_fc70968646b0854a64d4d143a71752e7_onEachFeature(feature, layer) {
+        function geo_json_47590aeb0ec9c193a4f61a14887d6bbf_onEachFeature(feature, layer) {
             layer.on({
             });
         };
-        var geo_json_fc70968646b0854a64d4d143a71752e7 = L.geoJson(null, {
-                onEachFeature: geo_json_fc70968646b0854a64d4d143a71752e7_onEachFeature,
+        var geo_json_47590aeb0ec9c193a4f61a14887d6bbf = L.geoJson(null, {
+                onEachFeature: geo_json_47590aeb0ec9c193a4f61a14887d6bbf_onEachFeature,
             
         });
 
-        function geo_json_fc70968646b0854a64d4d143a71752e7_add (data) {
-            geo_json_fc70968646b0854a64d4d143a71752e7
+        function geo_json_47590aeb0ec9c193a4f61a14887d6bbf_add (data) {
+            geo_json_47590aeb0ec9c193a4f61a14887d6bbf
                 .addData(data)
-                .addTo(map_e691b149498ccd1d25ed2acf76ba94ef);
+                .addTo(map_bc7aea23a14299aef13d66fe68cb6d02);
         }
-            geo_json_fc70968646b0854a64d4d143a71752e7_add({"features": [{"geometry": {"coordinates": [-111.92473311289035, 33.1865785620018], "type": "Point"}, "id": 169, "properties": {"Code": "PIMA", "Download": "\u003ca target=\u0027_blank\u0027 href=https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/12/S/VB/2023/1/S2A_12SVB_20230124_0_L2A/TCI.tif\u003eclick here\u003c/a\u003e", "Name": "Hohokam Pima National Monument", "STAC Item": "\u003ca target=\u0027_blank\u0027 href=https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2A_12SVB_20230124_0_L2A\u003eS2A_12SVB_20230124_0_L2A\u003c/a\u003e"}, "type": "Feature"}]});
+            geo_json_47590aeb0ec9c193a4f61a14887d6bbf_add({"features": [{"geometry": {"coordinates": [-79.84154206279355, 36.13298335000252], "type": "Point"}, "id": 133, "properties": {"Code": "GUCO", "Download": "\u003ca target=\u0027_blank\u0027 href=https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/17/S/PA/2023/1/S2B_17SPA_20230113_0_L2A/TCI.tif\u003eclick here\u003c/a\u003e", "Name": "Guilford Courthouse National Military Park", "STAC Item": "\u003ca target=\u0027_blank\u0027 href=https://earth-search.aws.element84.com/v1/collections/sentinel-2-l2a/items/S2B_17SPA_20230113_0_L2A\u003eS2B_17SPA_20230113_0_L2A\u003c/a\u003e"}, "type": "Feature"}]});
 
         
     
-    geo_json_fc70968646b0854a64d4d143a71752e7.bindPopup(
+    geo_json_47590aeb0ec9c193a4f61a14887d6bbf.bindPopup(
     function(layer){
     let div = L.DomUtil.create('div');
     
@@ -130,5 +130,21 @@
     }
     ,{"className": "foliumpopup"});
                      
+    
+            var layer_control_41b80626ebdce253ab8d57bca53545f7 = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_ac37a23ee2935b5bd9fbb8ee95d3ebd5,
+                },
+                overlays :  {
+                    "COG" : tile_layer_44a6892e15f8b0c42f7f492ad89699c9,
+                    "Marker" : geo_json_47590aeb0ec9c193a4f61a14887d6bbf,
+                },
+            };
+            L.control.layers(
+                layer_control_41b80626ebdce253ab8d57bca53545f7.base_layers,
+                layer_control_41b80626ebdce253ab8d57bca53545f7.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_bc7aea23a14299aef13d66fe68cb6d02);
+        
 </script>
 </html>
