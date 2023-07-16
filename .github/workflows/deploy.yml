@@ -19,5 +19,8 @@ jobs:
       - name: Install dependencies
         run: |
           npm install
+      - name: Build
+        run: |
+          gatsby build
       - name: Deploy
-        run: npx gh-pages -d build -u "github-actions-bot <support+actions@github.com>"
+        run: npx gh-pages -d public -u "github-actions-bot <support+actions@github.com>"
