@@ -1,11 +1,8 @@
 name: Gatsby Deploy
 
 on:
-  push:
-    branches: main
-
-env:
-  GH_TOKEN: ${{ secrets.GH_TOKEN }}
+  # push:
+  #   branches: main
 
 jobs:
   build:
@@ -13,8 +10,20 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v3
       - name: Build
-        uses: enriikke/gatsby-gh-pages-action@v2
+        run: |
+          npm install && npm run build
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v1
         with:
-          access-token: ${{ secrets.ACCESS_TOKEN }}
-          deploy-branch: gh-pages
+          path: public/
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
