@@ -13,6 +13,12 @@
         "react-icons": "^4.10.1"
     },
     "scripts": {
-        "deploy:ci": "gatsby build --prefix-paths && gh-pages -d public -r https://$GH_TOKEN@github.com/bmcandr/bmcandr.github.io.git"
+        "build": "gatsby build",
+        "develop": "gatsby develop",
+        "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,css}\"",
+        "start": "gatsby develop",
+        "serve": "gatsby serve",
+        "clean": "gatsby clean",
+        "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
     }
 }
