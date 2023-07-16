@@ -1,0 +1,24 @@
+{
+    "dependencies": {
+        "gatsby": "^5.11.0",
+        "gatsby-plugin-google-fonts": "^1.0.1",
+        "gatsby-plugin-image": "^3.11.0",
+        "gatsby-plugin-manifest": "^5.11.0",
+        "gatsby-plugin-sharp": "^5.11.0",
+        "gatsby-source-filesystem": "^5.11.0",
+        "gatsby-transformer-sharp": "^5.11.0",
+        "gh-pages": "^5.0.0",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-icons": "^4.10.1"
+    },
+    "scripts": {
+        "build": "gatsby build",
+        "develop": "gatsby develop",
+        "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,css}\"",
+        "start": "gatsby develop",
+        "serve": "gatsby serve",
+        "clean": "gatsby clean",
+        "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    }
+}
