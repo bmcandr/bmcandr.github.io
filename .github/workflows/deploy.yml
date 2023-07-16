@@ -1,8 +1,8 @@
 name: Gatsby Deploy
 
-on: push
-  # push:
-  #   branches: main
+on:
+  push:
+    branches: ${{ github.event.repository.default_branch }}
 
 jobs:
   build:
