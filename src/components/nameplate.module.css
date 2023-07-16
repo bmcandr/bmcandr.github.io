@@ -1,0 +1,20 @@
+html {
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.divider {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  max-width: 95%;
+  color: rgba(147, 164, 144, 1);
+}
+
+.name {
+  font-size: 2.5vh; 
+  color: white;
+}
+
+.tagline {
+  font-size: 1.5vh;
+  color: white;
+}
