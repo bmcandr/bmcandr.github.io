@@ -1,16 +1,24 @@
 import * as React from "react";
-import { body, divider, name, tagline } from "./nameplate.module.css";
-import SocialLayout from "./social-layout";
+import { divider, name, tagline } from "./nameplate.module.css";
 
 const Nameplate = ({ children }) => {
-  return (
-    <div>
-      <h1 className={name}>brendan mcandrew</h1>
-      <hr className={divider} />
-      <p className={tagline}>geospatial software engineer</p>
-      {children}
-    </div>
-  );
+    return (
+        <div
+            style={{
+                justifyContent: "center",
+                textAlign: "center",
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+            }}
+        >
+            <h1 className={name}>brendan mcandrew</h1>
+            <hr className={divider} />
+            <p className={tagline}>geospatial software engineer</p>
+            {children}
+        </div>
+    );
 };
 
 export default Nameplate;
