@@ -20,8 +20,8 @@ jobs:
         run: |
           npm install
       - name: Build
-        uses: jzweifel/gatsby-cli-github-action@master
+        uses: enriikke/gatsby-gh-pages-action@v2
         with:
-          gatsby-arg: build
+          access-token: ${{ secrets.GH_TOKEN }}
       - name: Deploy
         run: npx gh-pages -d public -u "github-actions-bot <support+actions@github.com>"
