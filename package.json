@@ -1,14 +1,17 @@
 {
-  "dependencies": {
-    "gatsby": "^5.11.0",
-    "gatsby-plugin-google-fonts": "^1.0.1",
-    "gatsby-plugin-image": "^3.11.0",
-    "gatsby-plugin-manifest": "^5.11.0",
-    "gatsby-plugin-sharp": "^5.11.0",
-    "gatsby-source-filesystem": "^5.11.0",
-    "gatsby-transformer-sharp": "^5.11.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-icons": "^4.10.1"
-  }
+    "dependencies": {
+        "gatsby": "^5.11.0",
+        "gatsby-plugin-google-fonts": "^1.0.1",
+        "gatsby-plugin-image": "^3.11.0",
+        "gatsby-plugin-manifest": "^5.11.0",
+        "gatsby-plugin-sharp": "^5.11.0",
+        "gatsby-source-filesystem": "^5.11.0",
+        "gatsby-transformer-sharp": "^5.11.0",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-icons": "^4.10.1"
+    },
+    "scripts": {
+        "deploy:ci": "gatsby build --prefix-paths && gh-pages -d public -r https://$GH_TOKEN@github.com/bmcandr/bmcandr.github.io.git"
+    }
 }
