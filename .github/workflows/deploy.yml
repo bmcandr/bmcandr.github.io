@@ -1,6 +1,6 @@
 name: Gatsby Deploy
 
-on:
+on: push
   # push:
   #   branches: main
 
