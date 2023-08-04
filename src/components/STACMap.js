@@ -87,7 +87,7 @@ const STACMap = () => {
                 limit: 1,
                 query: {
                     datetime: {
-                        gt: new Date(date.setDate(date.getDate() - 14)),
+                        gt: new Date(date.setDate(date.getDate() - 30)),
                     },
                     "eo:cloud_cover": {
                         lt: 25,
