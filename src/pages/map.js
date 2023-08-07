@@ -1,11 +1,12 @@
 import React from "react";
-import Map from "../components/map";
+import loadable from "@loadable/component";
+
+const STACMap = loadable(() => import("../components/map/STACMap"));
 
 const MapPage = () => {
     return (
         <div>
-            <p>Click anywhere!</p>
-            <Map />
+            <STACMap />
         </div>
     );
 };

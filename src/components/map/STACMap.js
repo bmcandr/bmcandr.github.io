@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import maplibregl from "maplibre-gl";
+import StacInfo from "./stac-info";
+import "maplibre-gl/dist/maplibre-gl.css";
 
 const tileJsonEndpoint =
     "https://qfpv7qdc0h.execute-api.us-east-1.amazonaws.com/cog/tilejson.json?tileMatrixSetId=WebMercatorQuad&tile_scale=1&url=";
@@ -30,7 +32,7 @@ async function getTileJson(url) {
 
 const mapContainerStyle = {
     width: "100vw",
-    height: "100vh",
+    height: "50vh",
 };
 
 const mapStyle = {
@@ -41,7 +43,6 @@ const mapStyle = {
             tiles: ["https://a.tile.openstreetmap.org/{z}/{x}/{y}.png"],
             tileSize: 256,
             attribution: "&copy; OpenStreetMap Contributors",
-            // attributionControl: false,
             maxzoom: 19,
         },
     },
@@ -58,6 +59,7 @@ const STACMap = () => {
     const mapContainerRef = useRef(null);
 
     const [map, setMap] = useState(null);
+    const [stacItem, setSTACItem] = useState({});
 
     useEffect(() => {
         const map = new maplibregl.Map({
@@ -74,6 +76,20 @@ const STACMap = () => {
         if (!map) return;
 
         map.on("click", function (e) {
+            const layer_id = "sentinel-2";
+            if (map.getLayer(layer_id)) {
+                map.removeLayer(layer_id);
+            }
+            if (map.getSource(layer_id)) {
+                map.removeSource(layer_id);
+            }
+
+            map.easeTo({
+                center: [e.lngLat.lng, e.lngLat.lat],
+                zoom: map.getZoom(),
+                duration: 2000,
+            });
+
             var geometry = {
                 coordinates: [e.lngLat.lng, e.lngLat.lat],
                 type: "Point",
@@ -92,33 +108,30 @@ const STACMap = () => {
                     "eo:cloud_cover": {
                         lt: 25,
                     },
+                    "s2:nodata_pixel_percentage": {
+                        lt: 50,
+                    },
                 },
                 sortby: "properties.s2:nodata_pixel_percentage",
             };
 
             searchSTAC(searchQuery).then(function (items) {
                 var item = items.features[0];
+                setSTACItem(item);
                 var href = item["assets"]["visual"]["href"];
 
                 getTileJson(tileJsonEndpoint.concat(href)).then(function (
                     tileJson
                 ) {
                     var center = tileJson.center;
-                    map.flyTo({
+                    map.easeTo({
                         center: [center[0], center[1]],
-                        zoom: center[2],
+                        zoom: 8,
+                        duration: 2000,
                     });
                 });
 
                 var tileUrl = tilesEndpoint.concat(href);
-
-                const layer_id = "sentinel-2";
-                if (map.getLayer(layer_id)) {
-                    map.removeLayer(layer_id);
-                }
-                if (map.getSource(layer_id)) {
-                    map.removeSource(layer_id);
-                }
                 map.addSource(layer_id, {
                     type: "raster",
                     tiles: [tileUrl],
@@ -130,14 +143,19 @@ const STACMap = () => {
                     type: "raster",
                     source: layer_id,
                     minzoom: 8,
-                    maxzoom: 14,
+                    maxzoom: 20,
                     paint: {},
                 });
             });
         });
     }, [map]);
 
-    return <div ref={mapContainerRef} style={mapContainerStyle} />;
+    return (
+        <div>
+            <div ref={mapContainerRef} style={mapContainerStyle}></div>
+            <StacInfo stacItem={stacItem} />
+        </div>
+    );
 };
 
 export default STACMap;
