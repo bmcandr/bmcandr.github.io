@@ -3,13 +3,27 @@ import maplibregl from "maplibre-gl";
 import StacInfo from "./stac-info";
 import "maplibre-gl/dist/maplibre-gl.css";
 
-const tileJsonEndpoint =
-    "https://qfpv7qdc0h.execute-api.us-east-1.amazonaws.com/cog/tilejson.json?tileMatrixSetId=WebMercatorQuad&tile_scale=1&url=";
-
-const tilesEndpoint =
-    "https://qfpv7qdc0h.execute-api.us-east-1.amazonaws.com/cog/tiles/WebMercatorQuad/{z}/{x}/{y}@1x.png?url=";
-
+const tilerUrl = "https://qfpv7qdc0h.execute-api.us-east-1.amazonaws.com";
 const stacCatalog = "https://earth-search.aws.element84.com/v1/search";
+
+const buildTilerUrl = (route) => {
+    return tilerUrl.concat(route);
+};
+
+const tileJsonEndpoint = buildTilerUrl(
+    "/cog/tilejson.json?tileMatrixSetId=WebMercatorQuad&tile_scale=1&url="
+);
+
+const tilesEndpoint = buildTilerUrl(
+    "/cog/tiles/WebMercatorQuad/{z}/{x}/{y}@1x.png?url="
+);
+
+async function awake() {
+    await fetch(buildTilerUrl("/api"), {
+        method: "HEAD",
+        mode: "cors",
+    });
+}
 
 async function searchSTAC(query) {
     const response = await fetch(stacCatalog, {
@@ -56,6 +70,8 @@ const mapStyle = {
 };
 
 const STACMap = () => {
+    awake();
+
     const mapContainerRef = useRef(null);
 
     const [map, setMap] = useState(null);
