@@ -1,0 +1,38 @@
+---
+import { projects } from '../data/projects.js';
+import ProjectCard from './ProjectCard.astro';
+---
+<section id="projects" class="projects">
+  <h2 class="heading">Projects</h2>
+  <div class="grid">
+    {projects.map((project) => (
+      <ProjectCard project={project} />
+    ))}
+  </div>
+</section>
+
+<style>
+  .projects {
+    background-color: #0d0d0d;
+    padding: 4rem 2rem;
+    min-height: 100vh;
+  }
+
+  .heading {
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(147, 164, 144, 1);
+    margin: 0 0 2rem;
+    text-align: center;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+</style>
