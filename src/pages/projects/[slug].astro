@@ -1,0 +1,18 @@
+---
+import Layout from '../../components/Layout.astro';
+
+export function getStaticPaths() {
+  // No project pages yet. Add entries here as MDX write-ups are created.
+  // Example when ready:
+  // import { projects } from '../../data/projects.js';
+  // return projects
+  //   .filter(p => p.slug)
+  //   .map(p => ({ params: { slug: p.slug } }));
+  return [];
+}
+
+const { slug } = Astro.params;
+---
+<Layout title="Project | Brendan McAndrew">
+  <p>Project page for {slug} — coming soon.</p>
+</Layout>

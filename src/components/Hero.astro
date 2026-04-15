@@ -1,0 +1,52 @@
+---
+import { Image } from 'astro:assets';
+import heroImage from '../images/hero.jpg';
+import Nameplate from './Nameplate.astro';
+---
+<section class="hero">
+  <Image
+    src={heroImage}
+    alt=""
+    class="hero-image"
+    quality={90}
+    loading="eager"
+    fetchpriority="high"
+  />
+  <div class="overlay"></div>
+  <Nameplate />
+  <div class="attribution">
+    <b>image:</b> Landsat-8 courtesy of the U.S. Geological Survey
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .hero-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+  }
+
+  .attribution {
+    position: absolute;
+    bottom: 0.5rem;
+    left: 0.25rem;
+    font-size: 0.75rem;
+    color: rgb(176, 183, 174);
+    z-index: 2;
+  }
+</style>

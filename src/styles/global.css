@@ -1,0 +1,12 @@
+@import '@fontsource/rajdhani/300.css';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Rajdhani', sans-serif;
+}

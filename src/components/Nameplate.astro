@@ -1,0 +1,102 @@
+---
+import { FaSquareGithub, FaLinkedin, FaChevronDown } from 'react-icons/fa6';
+---
+<div class="nameplate">
+  <h1 class="name">brendan mcandrew</h1>
+  <hr class="divider" />
+  <p class="tagline">geospatial software engineer</p>
+  <ul class="social-links">
+    <li>
+      <a href="https://github.com/bmcandr" target="_blank" rel="noopener noreferrer">
+        <FaSquareGithub />
+      </a>
+    </li>
+    <li>
+      <a href="https://linkedin.com/in/brendanbmcandrew" target="_blank" rel="noopener noreferrer">
+        <FaLinkedin />
+      </a>
+    </li>
+  </ul>
+</div>
+<a href="#projects" class="scroll-indicator" aria-label="Scroll to projects">
+  <FaChevronDown />
+</a>
+
+<style>
+  .nameplate {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+    white-space: nowrap;
+  }
+
+  .name {
+    font-size: 2.5vh;
+    color: white;
+    margin: 0;
+    font-weight: 300;
+    text-transform: lowercase;
+  }
+
+  .divider {
+    margin: 1em auto;
+    max-width: 95%;
+    border: none;
+    border-top: 1px solid rgba(147, 164, 144, 1);
+  }
+
+  .tagline {
+    font-size: 1.1rem;
+    color: white;
+    margin: 0;
+    letter-spacing: 0.05em;
+  }
+
+  .social-links {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0;
+  }
+
+  .social-links li {
+    display: inline-block;
+    padding: 5px;
+    font-size: 3rem;
+  }
+
+  .social-links a {
+    color: rgba(147, 164, 144, 0.65);
+    transition: color 0.5s ease-in-out;
+    display: block;
+    line-height: 1;
+  }
+
+  .social-links a:hover {
+    color: rgba(255, 255, 255, 0.65);
+  }
+
+  .scroll-indicator {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(147, 164, 144, 0.65);
+    font-size: 1.5rem;
+    z-index: 2;
+    transition: color 0.5s ease-in-out;
+    animation: bounce 2s infinite;
+  }
+
+  .scroll-indicator:hover {
+    color: rgba(255, 255, 255, 0.65);
+    cursor: pointer;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(6px); }
+  }
+</style>

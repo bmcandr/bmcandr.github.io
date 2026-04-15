@@ -1,0 +1,102 @@
+---
+import { Code } from 'astro:components';
+
+const { project } = Astro.props;
+const { title, description, tech, github, demo, snippet, slug } = project;
+---
+<div class="card">
+  <h3 class="title">
+    {github
+      ? <a href={github} target="_blank" rel="noopener noreferrer">{title}</a>
+      : title}
+  </h3>
+  <p class="description">{description}</p>
+  <ul class="tags">
+    {tech.map((t) => <li class="tag">{t}</li>)}
+  </ul>
+  {(github || demo) && (
+    <div class="links">
+      {github && <a href={github} target="_blank" rel="noopener noreferrer">GitHub →</a>}
+      {demo && <a href={demo} target="_blank" rel="noopener noreferrer">Demo →</a>}
+    </div>
+  )}
+  {snippet && (
+    <div class="snippet">
+      <Code code={snippet.code} lang={snippet.lang} theme="dracula" />
+    </div>
+  )}
+</div>
+
+<style>
+  .card {
+    background-color: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(147, 164, 144, 0.25);
+    border-radius: 4px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .title {
+    margin: 0;
+    font-size: 1.25rem;
+    color: white;
+  }
+
+  .title a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .title a:hover {
+    color: rgba(147, 164, 144, 1);
+  }
+
+  .description {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .tags {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .tag {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+    border: 1px solid rgba(147, 164, 144, 0.5);
+    border-radius: 2px;
+    color: rgba(147, 164, 144, 0.9);
+  }
+
+  .links {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .links a {
+    font-size: 0.875rem;
+    color: rgba(147, 164, 144, 0.75);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .links a:hover {
+    color: rgba(147, 164, 144, 1);
+  }
+
+  .snippet {
+    border-radius: 4px;
+    overflow: hidden;
+    font-size: 0.8rem;
+  }
+</style>
