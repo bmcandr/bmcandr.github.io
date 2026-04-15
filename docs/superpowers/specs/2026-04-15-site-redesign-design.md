@@ -34,6 +34,8 @@ Migrate `bmcandr.github.io` from Gatsby 5 to Astro 4, fix existing code quality 
 
 **Code highlighting:** Shiki (built into Astro, zero config). Used for optional code snippets in project cards and in future MDX write-ups.
 
+**Styling:** Each `.astro` component uses a scoped `<style>` block — no separate `.module.css` files. `global.css` holds only the body reset and font import.
+
 **Removed dependencies:** `gatsby`, `gatsby-*`, `@loadable/component`, `react-code-blocks`, `gh-pages` (Astro has its own static adapter).
 
 **Kept dependencies:** `maplibre-gl`, `react`, `react-dom`, `react-icons`.
@@ -44,10 +46,8 @@ Migrate `bmcandr.github.io` from Gatsby 5 to Astro 4, fix existing code quality 
 src/
 ├── components/
 │   ├── Layout.astro        # <html>, <head>, meta tags, font import
-│   ├── Hero.astro          # full-viewport background image + overlay
-│   ├── Nameplate.astro     # name, divider, tagline + slot for social icons
-│   ├── SocialLinks.astro   # <ul> of GitHub + LinkedIn icon links
-│   ├── Attribution.astro   # image credit (bottom-left)
+│   ├── Hero.astro          # bg image, overlay, Nameplate, attribution (inline)
+│   ├── Nameplate.astro     # name, divider, tagline, social icons (inline)
 │   ├── Projects.astro      # section wrapper + card grid
 │   ├── ProjectCard.astro   # individual project card
 │   └── map/
@@ -61,7 +61,7 @@ src/
 │   └── projects/
 │       └── [slug].astro    # MDX project page template (scaffold only)
 └── styles/
-    └── global.css          # body reset, font-face declaration
+    └── global.css          # body reset + font import only
 ```
 
 ## Pages
@@ -98,15 +98,11 @@ Wraps every page. Renders a valid `<html>` document with `<head>` (title, meta c
 
 ### `Hero.astro`
 
-Full-viewport `<section>` with the Landsat-8 image rendered via Astro's `<Image>` component (`object-fit: cover`, `height: 100vh`). Dark overlay via an absolutely-positioned `<div>`. Renders `<Nameplate>` and `<Attribution>` as children.
+Full-viewport `<section>` with the Landsat-8 image rendered via Astro's `<Image>` component (`object-fit: cover`, `height: 100vh`). Dark overlay via an absolutely-positioned `<div>`. Renders `<Nameplate>` as a child. Image attribution is inlined at the bottom-left (not a separate component).
 
 ### `Nameplate.astro`
 
-Absolutely centered within the hero. Name `<h1>`, `<hr>` divider, tagline `<p>`, `<SocialLinks>` below. Font sizes in `rem`, not `vh`.
-
-### `SocialLinks.astro`
-
-A valid `<ul>` (fixes current bare `<li>` bug). Two items: GitHub (`FaSquareGithub`) and LinkedIn (`FaLinkedin`). Styles scoped to this component.
+Absolutely centered within the hero. Name `<h1>`, `<hr>` divider, tagline `<p>`, social icons inlined as a `<ul>` below (GitHub `FaSquareGithub`, LinkedIn `FaLinkedin`). Font sizes in `rem`, not `vh`. Fixes current bare `<li>` bug.
 
 ### `Projects.astro`
 
@@ -146,7 +142,7 @@ export const projects = [
 | --- | --- |
 | `<li>` without parent `<ul>` in `SocialLayout` | Wrap in `<ul>` in `SocialLinks.astro` |
 | `<title>` inside `<div>` in `Layout` | Moved into `<head>` in `Layout.astro` |
-| Global `li` and `a` selectors in CSS Module | Scoped to `.socialLinks li` and `.socialLinks a` |
+| Global `li` and `a` selectors in CSS Module | Replaced with scoped `<style>` block in `Nameplate.astro` |
 | Font sizes in `vh` units (`2.5vh`) | Replaced with `rem` |
 | `alignText` (invalid CSS-in-JS) | Removed (was a no-op) |
 | `awake()` called outside `useEffect` | N/A — STAC map removed entirely |
