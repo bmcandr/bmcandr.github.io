@@ -9,6 +9,8 @@ import Nameplate from './Nameplate.astro';
     alt=""
     class="hero-image"
     quality={90}
+    loading="eager"
+    fetchpriority="high"
   />
   <div class="overlay"></div>
   <Nameplate />

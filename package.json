@@ -3,7 +3,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "deploy": "npm run build && gh-pages -d dist",
+    "deploy": "npm run build && gh-pages -d dist --nojekyll",
     "test": "vitest run"
   },
   "dependencies": {
@@ -14,10 +14,10 @@
     "maplibre-gl": "^3.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^5.6.0",
-    "sharp": "^0.34.5"
+    "react-icons": "^5.6.0"
   },
   "devDependencies": {
+    "sharp": "^0.34.5",
     "@testing-library/jest-dom": "^6.0.0",
     "@testing-library/react": "^14.0.0",
     "@vitejs/plugin-react": "^4.0.0",
