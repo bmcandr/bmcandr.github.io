@@ -3,7 +3,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "deploy": "npm run build && gh-pages -d dist --nojekyll",
+    "deploy": "npm run build && gh-pages -d dist",
     "test": "vitest run"
   },
   "dependencies": {
