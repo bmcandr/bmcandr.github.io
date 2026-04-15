@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import heroImage from '../images/hero.jpg';
+import Nameplate from './Nameplate.astro';
 ---
 <section class="hero">
   <Image
@@ -10,7 +11,7 @@ import heroImage from '../images/hero.jpg';
     quality={90}
   />
   <div class="overlay"></div>
-  <slot />
+  <Nameplate />
   <div class="attribution">
     <b>image:</b> Landsat-8 courtesy of the U.S. Geological Survey
   </div>
