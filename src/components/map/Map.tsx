@@ -1,6 +1,7 @@
-import React, { useEffect, useRef } from 'react';
-import maplibregl from 'maplibre-gl';
-import 'maplibre-gl/dist/maplibre-gl.css';
+import React, { useEffect, useRef } from "react";
+import maplibregl from "maplibre-gl";
+import "maplibre-gl/dist/maplibre-gl.css";
+import styles from "./styles.map.module.css";
 
 interface Props {
   center: [number, number];
@@ -8,7 +9,7 @@ interface Props {
   height?: string;
 }
 
-const Map: React.FC<Props> = ({ center, zoom, height = '400px' }) => {
+const Map: React.FC<Props> = ({ center, zoom, height = "400px" }) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -16,19 +17,7 @@ const Map: React.FC<Props> = ({ center, zoom, height = '400px' }) => {
 
     const map = new maplibregl.Map({
       container: containerRef.current,
-      style: {
-        version: 8,
-        sources: {
-          osm: {
-            type: 'raster',
-            tiles: ['https://a.tile.openstreetmap.org/{z}/{x}/{y}.png'],
-            tileSize: 256,
-            attribution: '&copy; OpenStreetMap Contributors',
-            maxzoom: 19,
-          },
-        },
-        layers: [{ id: 'osm', type: 'raster', source: 'osm' }],
-      },
+      style: "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json",
       center,
       zoom,
     });
@@ -36,7 +25,13 @@ const Map: React.FC<Props> = ({ center, zoom, height = '400px' }) => {
     return () => map.remove();
   }, []);
 
-  return <div ref={containerRef} style={{ width: '100%', height }} />;
+  return (
+    <div
+      className={styles.container}
+      ref={containerRef}
+      style={{ "--map-height": height } as React.CSSProperties}
+    />
+  );
 };
 
 export default Map;

@@ -1,0 +1,6 @@
+.container {
+  width: 100%;
+  height: var(--map-height, 400px);
+  border-radius: 4px;
+  overflow: hidden;
+}
