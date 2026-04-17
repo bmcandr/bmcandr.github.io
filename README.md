@@ -48,10 +48,14 @@ Remove the placeholder entry before going live.
 Project pages are MDX files that support inline interactive maps.
 
 1. Create `src/pages/projects/my-project.mdx`
-2. Add the slug to `getStaticPaths` in [`src/pages/projects/[slug].astro`](src/pages/projects/%5Bslug%5D.astro)
-3. Write in Markdown, embed maps with the `Map` component:
+2. Write in Markdown, embed maps with the `Map` component:
 
 ```mdx
+---
+layout: ../../components/ProjectLayout.astro
+title: My Project
+---
+
 import Map from '../../components/map/Map.tsx';
 
 # My Project
@@ -65,6 +69,23 @@ Analysis continues here...
 
 `Map` props: `center` (`[lng, lat]`), `zoom` (number), `height` (CSS string, default `"400px"`).
 
+### Code snippets
+
+Fenced code blocks are syntax-highlighted by Shiki automatically — no imports needed:
+
+````mdx
+Here's how to open a STAC catalog:
+
+```python
+import pystac_client
+
+client = pystac_client.Client.open("https://earth-search.aws.element84.com/v1")
+results = client.search(collections=["sentinel-2-l2a"], bbox=[-77.5, 38.8, -77.0, 39.0])
+```
+````
+
+Supported language tags include `python`, `javascript`, `typescript`, `bash`, `json`, `sql`, and [many more](https://shiki.style/languages).
+
 ## Structure
 
 ```text
@@ -73,7 +94,8 @@ src/
 │   ├── Layout.astro       # HTML shell (title prop)
 │   ├── Hero.astro         # Full-viewport satellite image section
 │   ├── Nameplate.astro    # Name, tagline, social links, scroll indicator
-│   ├── Projects.astro     # Project grid section
+│   ├── Projects.astro      # Project grid section
+│   ├── ProjectLayout.astro # Layout for MDX project write-up pages
 │   ├── ProjectCard.astro  # Individual project card (Shiki code highlighting)
 │   └── map/
 │       └── Map.tsx        # MapLibre GL map (React, use with client:load in MDX)
