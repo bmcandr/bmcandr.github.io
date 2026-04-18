@@ -1,0 +1,151 @@
+---
+import Layout from "./Layout.astro";
+
+interface Props {
+  title?: string;
+  frontmatter?: { title?: string };
+}
+
+// Support both direct prop and MDX frontmatter
+const { title, frontmatter } = Astro.props;
+const pageTitle = frontmatter?.title ?? title ?? "Project | Brendan McAndrew";
+---
+
+<Layout title={`${pageTitle} | Brendan McAndrew`}>
+  <div class="prose-wrapper">
+    <a href="/#projects" class="back-link">← Projects</a>
+    <article class="prose">
+      <slot />
+    </article>
+  </div>
+</Layout>
+
+<style>
+  .prose-wrapper {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 3rem 2rem 6rem;
+  }
+
+  .back-link {
+    display: inline-block;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    color: rgba(147, 164, 144, 0.75);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .back-link:hover {
+    color: rgba(147, 164, 144, 1);
+  }
+
+  .prose :global(h1) {
+    font-size: 2rem;
+    font-weight: 300;
+    color: white;
+    margin: 0 0 0.5rem;
+    letter-spacing: 0.02em;
+  }
+
+  .prose :global(h2) {
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: white;
+    margin: 2.5rem 0 0.75rem;
+    letter-spacing: 0.02em;
+    border-bottom: 1px solid rgba(147, 164, 144, 0.25);
+    padding-bottom: 0.4rem;
+  }
+
+  .prose :global(h3) {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 2rem 0 0.5rem;
+  }
+
+  .prose :global(p) {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.75;
+    margin: 0 0 1.25rem;
+  }
+
+  .prose :global(a) {
+    color: rgba(147, 164, 144, 0.9);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 0.3s ease;
+  }
+
+  .prose :global(a:hover) {
+    color: rgba(147, 164, 144, 1);
+  }
+
+  .prose :global(code) {
+    font-family: "Fira Code", "Cascadia Code", monospace;
+    font-size: 0.85em;
+    background-color: rgba(255, 255, 255, 0.08);
+    padding: 0.15em 0.4em;
+    border-radius: 3px;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .prose :global(pre) {
+    margin: 1.5rem 0;
+    border-radius: 4px;
+    overflow-x: auto;
+    padding: 1rem 0rem;
+    counter-reset: line;
+  }
+
+  /* Shiki code blocks — reset the inline code style inside pre */
+  .prose :global(pre code) {
+    background: none;
+    padding: 0;
+    font-size: 0.875rem;
+  }
+
+  .prose :global(pre .line::before) {
+    counter-increment: line;
+    content: counter(line);
+    display: inline-block;
+    width: 1.5rem;
+    margin-right: 1.25rem;
+    text-align: right;
+    color: rgba(255, 255, 255, 0.2);
+    user-select: none;
+  }
+
+  .prose :global(ul),
+  .prose :global(ol) {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.75;
+    margin: 0 0 1.25rem;
+    padding-left: 1.5rem;
+  }
+
+  .prose :global(li) {
+    margin-bottom: 0.35rem;
+  }
+
+  .prose :global(hr) {
+    border: none;
+    border-top: 1px solid rgba(147, 164, 144, 0.3);
+    margin: 2.5rem 0;
+  }
+
+  .prose :global(blockquote) {
+    border-left: 3px solid rgba(147, 164, 144, 0.5);
+    margin: 1.5rem 0;
+    padding: 0.5rem 0 0.5rem 1.25rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-style: italic;
+  }
+
+  .prose :global(img) {
+    max-width: 100%;
+    border-radius: 4px;
+    margin: 1.5rem 0;
+  }
+</style>
